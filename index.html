@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickBites — Быстрые рецепты</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header class="hero">
+        <h1 class="glow-text">QuickBites</h1>
+        <p class="subtitle">Введите 3-4 продукта — получите 3 идеальных блюда</p>
+      </header>
+
+      <main class="container">
+        <div class="search-wrapper">
+          <div class="input-group">
+            <input 
+              type="text" 
+              id="product-input" 
+              placeholder="Например: яйца, сыр, бекон..."
+              autocomplete="off"
+            >
+            <button id="search-btn">Найти блюда</button>
+          </div>
+          <div id="loading" class="hidden">Поиск лучших рецептов...</div>
+        </div>
+
+        <section id="results-grid" class="results-grid">
+          <!-- Карточки появятся здесь -->
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
