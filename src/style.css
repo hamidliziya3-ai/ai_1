@@ -9,6 +9,48 @@
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Language Switcher */
+.lang-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.lang-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+}
+
+.lang-btn:hover {
+  border-color: var(--accent-color);
+  background: rgba(245, 158, 11, 0.1);
+  transform: translateY(-2px);
+}
+
+.lang-btn.active {
+  background: var(--accent-color);
+  color: #000;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +65,7 @@ body {
   display: flex;
   justify-content: center;
   overflow-x: hidden;
-  background-image: 
+  background-image:
     radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
     radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
 }
@@ -131,12 +173,11 @@ button:hover {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   width: 100%;
-  opacity: 0;
-  transform: translateY(20px);
+  margin-top: 2rem;
 }
 
-.results-grid.visible {
-  animation: fadeInUp 0.8s forwards;
+.results-grid.visible .recipe-card {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .recipe-card {
@@ -151,6 +192,8 @@ button:hover {
   position: relative;
   overflow: hidden;
   padding-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .recipe-header {
@@ -167,7 +210,10 @@ button:hover {
 .recipe-header::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
 }
 
@@ -334,17 +380,42 @@ button:hover {
 }
 
 @keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
-  .glow-text { font-size: 3rem; }
-  .input-group { flex-direction: column; border-radius: 20px; padding: 1rem; }
-  button { width: 100%; margin-top: 0.5rem; }
+  .glow-text {
+    font-size: 3rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
 }
