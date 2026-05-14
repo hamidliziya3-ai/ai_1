@@ -1,0 +1,59 @@
+const fs = require('fs');
+const path = require('path');
+
+const dbPath = path.join(__dirname, '..', 'src', 'data', 'recipes.json');
+const baseRecipes = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+console.log(`Base recipes: ${baseRecipes.length}`);
+
+const target = 5000;
+const categories = {
+  'Pasta': 'Паста', 'Salad': 'Салат', 'Soup': 'Суп', 'Main': 'Основное блюдо',
+  'Dessert': 'Десерт', 'Breakfast': 'Завтрак', 'Pizza': 'Пицца', 'Sandwich': 'Сэндвич',
+  'Grill': 'Гриль', 'Smoothie': 'Смузи', 'Snack': 'Закуска', 'Baking': 'Выпечка'
+};
+const ruIngMapAcc = {'chicken': 'курицу', 'beef': 'говядину', 'tomato': 'помидоры', 'potato': 'картофель', 'cheese': 'сыр', 'onion': 'лук', 'garlic': 'чеснок', 'milk': 'молоко', 'egg': 'яйцо', 'flour': 'муку', 'sugar': 'сахар', 'butter': 'масло', 'oil': 'масло', 'bread': 'хлеб', 'rice': 'рис', 'pasta': 'пасту', 'fish': 'рыбу', 'lemon': 'лимон', 'pepper': 'перец', 'salt': 'соль', 'honey': 'мед', 'yogurt': 'йогурт', 'avocado': 'авокадо', 'bacon': 'бекон', 'shrimp': 'креветки', 'broccoli': 'брокколи', 'carrot': 'морковь', 'cucumbers': 'огурцы', 'olives': 'оливки', 'basil': 'базилик', 'oregano': 'орегано', 'mushrooms': 'грибы', 'cream': 'сливки', 'mustard': 'горчицу', 'mayo': 'майонез', 'soy sauce': 'соевый соус', 'chili': 'чили', 'lime': 'лайм', 'orange': 'апельсин', 'apple': 'яблоко', 'banana': 'банан', 'berries': 'ягоды', 'walnuts': 'грецкие орехи', 'almonds': 'миндаль', 'chocolate': 'шоколад', 'vanilla': 'ваниль'};
+const ruIngMapNom = {'chicken': 'курица', 'beef': 'говядина', 'tomato': 'помидоры', 'potato': 'картофель', 'cheese': 'сыр', 'onion': 'лук', 'garlic': 'чеснок', 'milk': 'молоко', 'egg': 'яйцо', 'flour': 'мука', 'sugar': 'сахар', 'butter': 'масло', 'oil': 'масло', 'bread': 'хлеб', 'rice': 'рис', 'pasta': 'паста', 'fish': 'рыба', 'lemon': 'лимон', 'pepper': 'перец', 'salt': 'соль', 'honey': 'мед', 'yogurt': 'йогурт', 'avocado': 'авокадо', 'bacon': 'бекон', 'shrimp': 'креветки', 'broccoli': 'брокколи', 'carrot': 'морковь', 'cucumbers': 'огурцы', 'olives': 'оливки', 'basil': 'базилик', 'oregano': 'орегано', 'mushrooms': 'грибы', 'cream': 'сливки', 'mustard': 'горчица', 'mayo': 'майонез', 'soy sauce': 'соевый соус', 'chili': 'чили', 'lime': 'лайм', 'orange': 'апельсин', 'apple': 'яблоко', 'banana': 'банан', 'berries': 'ягоды', 'walnuts': 'грецкие орехи', 'almonds': 'миндаль', 'chocolate': 'шоколад', 'vanilla': 'ваниль'};
+const ruIngMapInstr = {'chicken': 'курицей', 'beef': 'говядиной', 'tomato': 'помидорами', 'potato': 'картофелем', 'cheese': 'сыром', 'onion': 'луком', 'garlic': 'чесноком', 'milk': 'молоком', 'egg': 'яйцом', 'flour': 'мукой', 'sugar': 'сахаром', 'butter': 'маслом', 'oil': 'маслом', 'bread': 'хлебом', 'rice': 'рисом', 'pasta': 'пастой', 'fish': 'рыбой', 'lemon': 'лимоном', 'pepper': 'перцем', 'salt': 'солью', 'honey': 'медом', 'yogurt': 'йогуртом', 'avocado': 'авокадо', 'bacon': 'беконом', 'shrimp': 'креветками', 'broccoli': 'брокколи', 'carrot': 'морковью', 'cucumbers': 'огурцами', 'olives': 'оливками', 'basil': 'базиликом', 'oregano': 'орегано', 'mushrooms': 'грибами', 'cream': 'сливками', 'mustard': 'горчицей', 'mayo': 'майонезом', 'soy sauce': 'соевым соусом', 'chili': 'чили', 'lime': 'лаймом', 'orange': 'апельсином', 'apple': 'яблоком', 'banana': 'бананом', 'berries': 'ягодами', 'walnuts': 'грецкими орехами', 'almonds': 'миндалем', 'chocolate': 'шоколадом', 'vanilla': 'ванилью'};
+
+const generated = [];
+const catKeys = Object.keys(categories);
+const ingKeys = Object.keys(ruIngMapNom);
+
+for(let i=0; i<target; i++) {
+  const catEn = catKeys[Math.floor(Math.random()*catKeys.length)];
+  const catRu = categories[catEn];
+  const mealIngs = [];
+  const count = 2 + Math.floor(Math.random()*4);
+  
+  while(mealIngs.length < count) {
+    const ing = ingKeys[Math.floor(Math.random()*ingKeys.length)];
+    if(!mealIngs.includes(ing)) mealIngs.push(ing);
+  }
+  
+  const mainIng = mealIngs[0];
+  const secondIng = mealIngs[1];
+  
+  const titleEn = `${catEn} with ${mainIng} and ${secondIng}`;
+  const titleRu = `${catRu} с ${ruIngMapInstr[mainIng] || mainIng} и ${ruIngMapInstr[secondIng] || secondIng}`;
+  
+  generated.push({
+    title: titleEn,
+    title_ru: titleRu,
+    ingredients: mealIngs.map(ing => 'some ' + ing),
+    ingredients_ru: mealIngs.map(ing => 'немного ' + (ruIngMapNom[ing] || ing)),
+    mealIngredients: mealIngs,
+    steps: ['Prepare the ' + mealIngs[0], 'Mix with ' + (mealIngs[1] || 'others'), 'Cook and serve.'],
+    steps_ru: [
+      'Возьмите ' + (ruIngMapAcc[mealIngs[0]] || mealIngs[0]),
+      'Смешайте с ' + (ruIngMapAcc[mealIngs[1]] || 'остальным'),
+      'Доведите до готовности и подавайте.'
+    ],
+    thumb: 'https://www.themealdb.com/images/ingredients/' + (mealIngs[0].charAt(0).toUpperCase() + mealIngs[0].slice(1)) + '.png',
+    isLocal: true
+  });
+}
+
+const finalDb = [...baseRecipes, ...generated];
+fs.writeFileSync(dbPath, JSON.stringify(finalDb, null, 2));
+console.log(`Successfully restored base and added ${generated.length} recipes. Total: ${finalDb.length}`);
