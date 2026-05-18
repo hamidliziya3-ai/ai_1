@@ -84,7 +84,7 @@ function updateLanguage(lang) {
 
 async function loadDatabase() {
   try {
-    const response = await fetch(`/src/data/recipes.json?v=${Date.now()}`);
+    const response = await fetch(`/data/recipes.json?v=${Date.now()}`);
     localDatabase = await response.json();
     console.log('Database loaded:', localDatabase.length, 'recipes');
     const status = document.getElementById('db-status');
