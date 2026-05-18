@@ -11,9 +11,9 @@ const categories = {
   'Stew': 'Рагу', 'Roast': 'Жаркое', 'Cake': 'Пирог', 'Drink': 'Напиток'
 };
 
-const ruIngMapNom = {'chicken': 'курица', 'beef': 'говядина', 'tomato': 'помидоры', 'potato': 'картофель', 'cheese': 'сыр', 'onion': 'лук', 'garlic': 'чеснок', 'milk': 'молоко', 'egg': 'яйцо', 'flour': 'мука', 'sugar': 'сахар', 'butter': 'масло', 'oil': 'масло', 'bread': 'хлеб', 'rice': 'рис', 'pasta': 'паста', 'fish': 'рыба', 'lemon': 'лимон', 'pepper': 'перец', 'salt': 'соль', 'honey': 'мед', 'yogurt': 'йогурт', 'avocado': 'авокадо', 'bacon': 'бекон', 'shrimp': 'креветки', 'broccoli': 'брокколи', 'carrot': 'морковь', 'cucumbers': 'огурцы', 'olives': 'оливки', 'basil': 'базилик', 'oregano': 'орегано', 'mushrooms': 'грибы', 'cream': 'сливки', 'mustard': 'горчица', 'mayo': 'майонез', 'soy sauce': 'соевый соус', 'chili': 'чили', 'lime': 'лайм', 'orange': 'апельсин', 'apple': 'яблоко', 'banana': 'банан', 'berries': 'ягоды', 'walnuts': 'грецкие орехи', 'almonds': 'миндаль', 'chocolate': 'шоколад', 'vanilla': 'ваниль', 'spinach': 'шпинат', 'corn': 'кукуруза', 'beans': 'фасоль', 'peas': 'горошек', 'turkey': 'индейка', 'pork': 'свинина'};
+const ruIngMapNom = { 'chicken': 'курица', 'beef': 'говядина', 'tomato': 'помидоры', 'potato': 'картофель', 'cheese': 'сыр', 'onion': 'лук', 'garlic': 'чеснок', 'milk': 'молоко', 'egg': 'яйцо', 'flour': 'мука', 'sugar': 'сахар', 'butter': 'масло', 'oil': 'масло', 'bread': 'хлеб', 'rice': 'рис', 'pasta': 'паста', 'fish': 'рыба', 'lemon': 'лимон', 'pepper': 'перец', 'salt': 'соль', 'honey': 'мед', 'yogurt': 'йогурт', 'avocado': 'авокадо', 'bacon': 'бекон', 'shrimp': 'креветки', 'broccoli': 'брокколи', 'carrot': 'морковь', 'cucumbers': 'огурцы', 'olives': 'оливки', 'basil': 'базилик', 'oregano': 'орегано', 'mushrooms': 'грибы', 'cream': 'сливки', 'mustard': 'горчица', 'mayo': 'майонез', 'soy sauce': 'соевый соус', 'chili': 'чили', 'lime': 'лайм', 'orange': 'апельсин', 'apple': 'яблоко', 'banana': 'банан', 'berries': 'ягоды', 'walnuts': 'грецкие орехи', 'almonds': 'миндаль', 'chocolate': 'шоколад', 'vanilla': 'ваниль', 'spinach': 'шпинат', 'corn': 'кукуруза', 'beans': 'фасоль', 'peas': 'горошек', 'turkey': 'индейка', 'pork': 'свинина' };
 
-const ruIngMapInstr = {'chicken': 'курицей', 'beef': 'говядиной', 'tomato': 'помидорами', 'potato': 'картофелем', 'cheese': 'сыром', 'onion': 'луком', 'garlic': 'чесноком', 'milk': 'молоком', 'egg': 'яйцом', 'flour': 'мукой', 'sugar': 'сахаром', 'butter': 'маслом', 'oil': 'маслом', 'bread': 'хлебом', 'rice': 'рисом', 'pasta': 'пастой', 'fish': 'рыбой', 'lemon': 'лимоном', 'pepper': 'перцем', 'salt': 'солью', 'honey': 'медом', 'yogurt': 'йогуртом', 'avocado': 'авокадо', 'bacon': 'беконом', 'shrimp': 'креветками', 'broccoli': 'брокколи', 'carrot': 'морковью', 'cucumbers': 'огурцами', 'olives': 'оливками', 'basil': 'базиликом', 'oregano': 'орегано', 'mushrooms': 'грибами', 'cream': 'сливками', 'mustard': 'горчицей', 'mayo': 'майонезом', 'soy sauce': 'соевым соусом', 'chili': 'чили', 'lime': 'лаймом', 'orange': 'апельсином', 'apple': 'яблоком', 'banana': 'бананом', 'berries': 'ягодами', 'walnuts': 'грецкими орехами', 'almonds': 'миндалем', 'chocolate': 'шоколадом', 'vanilla': 'ванилью', 'spinach': 'шпинатом', 'corn': 'кукурузой', 'beans': 'фасолью', 'peas': 'горошком', 'turkey': 'индейкой', 'pork': 'свининой'};
+const ruIngMapInstr = { 'chicken': 'курицей', 'beef': 'говядиной', 'tomato': 'помидорами', 'potato': 'картофелем', 'cheese': 'сыром', 'onion': 'луком', 'garlic': 'чесноком', 'milk': 'молоком', 'egg': 'яйцом', 'flour': 'мукой', 'sugar': 'сахаром', 'butter': 'маслом', 'oil': 'маслом', 'bread': 'хлебом', 'rice': 'рисом', 'pasta': 'пастой', 'fish': 'рыбой', 'lemon': 'лимоном', 'pepper': 'перцем', 'salt': 'солью', 'honey': 'медом', 'yogurt': 'йогуртом', 'avocado': 'авокадо', 'bacon': 'беконом', 'shrimp': 'креветками', 'broccoli': 'брокколи', 'carrot': 'морковью', 'cucumbers': 'огурцами', 'olives': 'оливками', 'basil': 'базиликом', 'oregano': 'орегано', 'mushrooms': 'грибами', 'cream': 'сливками', 'mustard': 'горчицей', 'mayo': 'майонезом', 'soy sauce': 'соевым соусом', 'chili': 'чили', 'lime': 'лаймом', 'orange': 'апельсином', 'apple': 'яблоком', 'banana': 'бананом', 'berries': 'ягодами', 'walnuts': 'грецкими орехами', 'almonds': 'миндалем', 'chocolate': 'шоколадом', 'vanilla': 'ванилью', 'spinach': 'шпинатом', 'corn': 'кукурузой', 'beans': 'фасолью', 'peas': 'горошком', 'turkey': 'индейкой', 'pork': 'свининой' };
 
 const detailedSteps = {
   soup: {
@@ -52,17 +52,17 @@ const ingKeys = Object.keys(ruIngMapNom);
 while (newRecipes.length < countToAdd) {
   const catEn = catKeys[Math.floor(Math.random() * catKeys.length)];
   const catRu = categories[catEn];
-  
+
   const mealIngs = [];
   const ingCount = 2 + Math.floor(Math.random() * 4);
   while (mealIngs.length < ingCount) {
     const ing = ingKeys[Math.floor(Math.random() * ingKeys.length)];
     if (!mealIngs.includes(ing)) mealIngs.push(ing);
   }
-  
+
   const mainIng = mealIngs[0];
   const secondIng = mealIngs[1];
-  
+
   // Try different title patterns
   const patterns = [
     { en: `${catEn} with ${mainIng} and ${secondIng}`, ru: `${catRu} с ${ruIngMapInstr[mainIng] || mainIng} и ${ruIngMapInstr[secondIng] || secondIng}` },
@@ -70,13 +70,13 @@ while (newRecipes.length < countToAdd) {
     { en: `Spicy ${mainIng} and ${secondIng} ${catEn}`, ru: `Острый ${catRu} с ${ruIngMapInstr[mainIng] || mainIng} и ${ruIngMapInstr[secondIng] || secondIng}` },
     { en: `Homemade ${catEn} with ${mainIng}`, ru: `Домашний ${catRu} с ${ruIngMapInstr[mainIng] || mainIng}` }
   ];
-  
+
   const pattern = patterns[Math.floor(Math.random() * patterns.length)];
   const titleEn = pattern.en;
   const titleRu = pattern.ru;
-  
+
   if (seenTitles.has(titleEn.toLowerCase())) continue;
-  
+
   let type = 'generic';
   const lowerTitle = titleEn.toLowerCase();
   if (lowerTitle.includes('soup')) type = 'soup';
@@ -96,7 +96,7 @@ while (newRecipes.length < countToAdd) {
     thumb: 'https://www.themealdb.com/images/ingredients/' + (mainIng.charAt(0).toUpperCase() + mainIng.slice(1)) + '.png',
     isLocal: true
   });
-  
+
   seenTitles.add(titleEn.toLowerCase());
 }
 
